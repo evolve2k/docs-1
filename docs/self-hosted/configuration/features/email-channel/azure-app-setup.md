@@ -9,7 +9,11 @@ Since [Microsoft deprecating the Basic Auth flow](https://learn.microsoft.com/en
 
 To add email channel inbox for outlook email, you have to create azure app in the Microsoft Azure portal. You can find more details about creating Azure App [here](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app).
 
-1. In the app registration page, click on `New Registration` and select the any account type.
+1. In the app registration page, click on `New Registration` and select an account type.
+
+We recommend you'll usually want to setup up use for 'single tenant' (all support inboxes are within the same domain).
+
+Wanting to setup multi-tenant use to support inboxes at multiple domains?  Beyond Registering an Azure Portal Application per this guide (which does not require verification for single tenant use), Microsoft will also require you apply for [publisher verification of your organisation](https://learn.microsoft.com/en-us/azure/active-directory/develop/publisher-verification-overview?source=recommendations) (This involves providing legal documents to an assessor and can take some time).
 
 Once you register your Azure App, make sure you add proper account type according to your use and add redirect URL for your domain `https://{your-domain}/microsoft/callback`.
 You can find more details about redirect URL [here](https://learn.microsoft.com/en-us/azure/active-directory/develop/reply-url).
